@@ -4,7 +4,7 @@
 // Datum: 31 mei 2013
 // Wijziging: 18 september 2013
 
-// Database connectie -> wachtwoord nog aanpassen!
+// Database connectie -> wachtwoord nog aanpassen in connect.php NIET VERGETEN!
 require_once 'connect.php';
 ?>
 <html>
