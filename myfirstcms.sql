@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 19 sep 2013 om 00:08
+-- Genereertijd: 19 sep 2013 om 00:22
 -- Serverversie: 5.5.25a
 -- PHP-versie: 5.4.4
 
@@ -48,6 +48,35 @@ INSERT INTO `content` (`id`, `titel`, `content`, `dtm_invoer`, `dtm_wijzig`) VAL
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `provincie`
+--
+
+CREATE TABLE IF NOT EXISTS `provincie` (
+  `id` varchar(2) NOT NULL,
+  `provincie` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `provincie`
+--
+
+INSERT INTO `provincie` (`id`, `provincie`) VALUES
+('DR', 'Drenthe'),
+('FL', 'Flevoland'),
+('FR', 'Friesland'),
+('GD', 'Gelderland'),
+('GR', 'Groningen'),
+('LB', 'Limburg'),
+('NB', 'Noord-Brabant'),
+('NH', 'Noord-Holland'),
+('OV', 'Overijssel'),
+('UT', 'Utrecht'),
+('ZH', 'Zuid-Holland'),
+('ZL', 'Zeeland');
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `user`
 --
 
@@ -55,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
   `wachtwoord` varchar(50) NOT NULL,
+  `prov_id` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
@@ -62,12 +92,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Gegevens worden uitgevoerd voor tabel `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `wachtwoord`) VALUES
-(1, 'nn@nn.nl', 'testtest'),
-(2, 'peter@peter.nl', 'noggeheimer'),
-(3, 'peter@peterbijker.nl', 'geheim'),
-(5, 'staande@bij.nl', 'geheim'),
-(6, 'nana@na.nl', 'anders');
+INSERT INTO `user` (`id`, `email`, `wachtwoord`, `prov_id`) VALUES
+(1, 'nn@nn.nl', 'testtest', 'UT'),
+(2, 'peter@peter.nl', 'noggeheimer', 'ZL'),
+(3, 'peter@peterbijker.nl', 'geheim', 'OV'),
+(5, 'staande@bij.nl', 'geheim', 'NH'),
+(6, 'nana@na.nl', 'anders', 'FL');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
