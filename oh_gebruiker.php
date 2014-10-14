@@ -16,8 +16,8 @@ require_once 'connect.php';
 <?php
 // Query uitvoeren
 $sql = "SELECT * FROM user";
-$result = mysql_query($sql);
-while($rij = mysql_fetch_assoc($result)) {
+$result = mysqli_query($sql);
+while($rij = mysqli_fetch_assoc($result)) {
 // Gegevens laten zien
 	echo "<tr><td>".$rij['id']."</td><td>".$rij['email'];
 	echo "</td><td>".$rij['wachtwoord'];
