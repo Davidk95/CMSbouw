@@ -1,1 +1,1 @@
-<?php$host = "localhost";$gebruiker = "root";$wachtwoord = "root";$dbnaam = "myfirstcms";$Verbinding = mysql_connect ($host, $gebruiker, $wachtwoord) ordie("De verbinding kan niet worden gemaakt<p>".mysql_error());mysql_select_db($dbnaam);?>
+<?php$host = "localhost";$gebruiker = "root";$wachtwoord = "root";$dbnaam = "myfirstcms";$Verbinding = mysqli_connect ($host, $gebruiker, $wachtwoord) ordie("De verbinding kan niet worden gemaakt<p>".mysqli_error());mysqli_select_db($dbnaam);?>
